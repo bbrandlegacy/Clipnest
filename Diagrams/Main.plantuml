@@ -1,0 +1,44 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class DatabaseManager {
+  + DatabaseManager(): 
+  - connection: Connection
+   connection: Connection
+}
+class Main {
+  + Main(): 
+  + main(String[]): void
+}
+class MetadataFetcher {
+  + MetadataFetcher(): 
+  + fetch(String, String): VideoMetadata
+}
+class VideoDAO {
+  + VideoDAO(): 
+  + deleteVideoById(int): boolean
+  + getVideosByTag(String): List<VideoMetadata>
+  + save(VideoMetadata): void
+   allTags: List<String>
+}
+class VideoMetadata {
+  + VideoMetadata(String, String, String, String, String, String): 
+  - id: String
+  - url: String
+  - uploader: String
+  - title: String
+  - duration: String
+  - customTag: String
+  + toString(): String
+   duration: String
+   customTag: String
+   title: String
+   url: String
+   id: String
+   uploader: String
+}
+
+@enduml
