@@ -86,9 +86,8 @@ https://github.com/bbrandlegacy/Clipnest/blob/main/Diagrams/Architecture%20Diagr
 
 ### 5.3 Technologies Used
 
-List all major technologies (e.g., Java 21, Angular, MySQL, MongoDB, JavaFX, etc.).
-java21
-youtube-dlp
+Java 21
+Youtube-dlp
 
 
 ### 5.4 Layer Descriptions
