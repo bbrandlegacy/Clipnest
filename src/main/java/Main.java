@@ -45,9 +45,26 @@ public class Main {
                             }
                         }
 
-                        System.out.println("Choose a tag to filter videos:");
-                        String tagd = scanner.nextLine();
-                        List<VideoMetadata> videos = VideoDAO.getVideosByTag(tagd);
+                        System.out.println("Choose a tag to filter videos (number or tag name):");
+                        String tagInput = scanner.nextLine().trim();
+
+                        String selectedTag = null;
+
+                        // Check if input is a number
+                        try {
+                            int index = Integer.parseInt(tagInput);
+                            if (index >= 1 && index <= tags.size()) {
+                                selectedTag = tags.get(index - 1);
+                            } else {
+                                System.out.println("Invalid number selection.");
+                                return;
+                            }
+                        } catch (NumberFormatException e) {
+                            // Not a number, treat as string
+                            selectedTag = tagInput;
+                        }
+
+                        List<VideoMetadata> videos = VideoDAO.getVideosByTag(selectedTag);
 
                         if (videos.isEmpty()) {
                             System.out.println("No videos found for this tag.");
@@ -68,7 +85,6 @@ public class Main {
                                 return;
                             }
 
-                            // Show preview and confirm
                             System.out.println("You selected:");
                             System.out.println("Title: " + videoToDelete.getTitle());
                             System.out.println("URL: " + videoToDelete.getUrl());
