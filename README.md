@@ -147,7 +147,11 @@ run the project and the CLI will interact with youtube-dlp on its own
 
 ## 12. How to Use
 
-follow the instructions of the menu (its self explanatory)
+Go to youtube, get a video
+select add a video
+paste the url
+give it a custom tag or an existing tag
+revisit later using the tag you utilized
 
 ---
 
