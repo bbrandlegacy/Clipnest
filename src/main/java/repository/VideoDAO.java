@@ -10,7 +10,7 @@ import java.util.List;
 public class VideoDAO {
 
     public static void save(VideoMetadata video) throws Exception {
-        Connection conn = DatabaseManager.getConnection();
+        Connection conn = DatabaseManager.getInstance().getConnection();
 
         String sql = "INSERT INTO videos (title, url, duration, uploader, custom_tag) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement stmt = conn.prepareStatement(sql);
@@ -26,7 +26,7 @@ public class VideoDAO {
 
     public static boolean deleteVideoById(int id) {
         String query = "DELETE FROM videos WHERE id = ?";
-        try (Connection conn = DatabaseManager.getConnection();
+        try (Connection conn = DatabaseManager.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setInt(1, id);
             return stmt.executeUpdate() > 0;
@@ -37,7 +37,7 @@ public class VideoDAO {
     }
 
     public static List<VideoMetadata> getVideosByTag(String tag) throws Exception {
-        Connection conn = DatabaseManager.getConnection();
+        Connection conn = DatabaseManager.getInstance().getConnection();
 
         String sql = "SELECT id, title, url, duration, uploader, custom_tag FROM videos WHERE custom_tag = ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
@@ -66,7 +66,7 @@ public class VideoDAO {
         List<String> tags = new ArrayList<>();
         String query = "SELECT DISTINCT custom_tag FROM videos ORDER BY custom_tag";
 
-        try (Connection conn = DatabaseManager.getConnection();
+        try (Connection conn = DatabaseManager.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
 
