@@ -82,14 +82,12 @@ Currently, I have a three-layer structure with models, repository, and services.
 
 ### 5.2 Architecture Diagram
 
-*(Insert a diagram here)*
-https://github.com/bbrandlegacy/Clipnest/blob/main/Diagrams/Main.drawio
+https://github.com/bbrandlegacy/Clipnest/blob/main/Diagrams/Architecture%20Diagram.png
 
 ### 5.3 Technologies Used
 
-List all major technologies (e.g., Java 21, Angular, MySQL, MongoDB, JavaFX, etc.).
-java21
-youtube-dlp
+Java 21
+Youtube-dlp
 
 
 ### 5.4 Layer Descriptions
@@ -103,7 +101,7 @@ youtube-dlp
 
 ## 6. Use Case Diagram(s)
 
-
+https://github.com/bbrandlegacy/Clipnest/blob/main/Diagrams/Use%20Case%20Diagram.png
 
 ---
 
@@ -121,13 +119,13 @@ Provide detailed descriptions for each use case:
 
 ## 8. Class Diagram
 
-Insert your UML class diagram image. Include key classes, their attributes, methods, relationships (associations, inheritance, interfaces, composition).
+https://github.com/bbrandlegacy/Clipnest/blob/main/Diagrams/Class%20Diagram.png
 
 ---
 
 ## 9. Sequence Diagrams
 
-Provide sequence diagrams for important use cases.
+https://github.com/bbrandlegacy/Clipnest/blob/main/Diagrams/Sequence%20Diagram.png
 
 ---
 
@@ -149,7 +147,11 @@ run the project and the CLI will interact with youtube-dlp on its own
 
 ## 12. How to Use
 
-follow the instructions of the menu (its self explanatory)
+Go to youtube, get a video
+select add a video
+paste the url
+give it a custom tag or an existing tag
+revisit later using the tag you utilized
 
 ---
 
